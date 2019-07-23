@@ -13,9 +13,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListView eventListView = (ListView) findViewById(R.id.event_list);
+        ListView eventListView = findViewById(R.id.event_list);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+        // what is this adapter constructor means?
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                // what is context???
                 this,
                 R.layout.event_item,
                 R.id.event_name,
@@ -26,12 +28,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String[] getEventNames() {
-        String[] names = {
+        return new String[]{
                 "Event1", "Event2", "Event3",
                 "Event4", "Event5", "Event6",
                 "Event7", "Event8", "Event9",
                 "Event10", "Event11", "Event12"
         };
-        return names;
     }
 }
