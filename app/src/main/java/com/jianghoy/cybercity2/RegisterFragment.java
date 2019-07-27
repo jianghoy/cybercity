@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RegisterFragment extends Fragment {
+public class RegisterFragment extends OnBoardingBaseFragment {
 
     public static RegisterFragment newInstance() {
       Bundle args = new Bundle();
@@ -33,7 +33,14 @@ public class RegisterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false);
+        View view = super.onCreateView(inflater, container, savedInstanceState);
+        submitButton.setText(R.string.register);
+        return view;
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.fragment_register;
     }
 
 }
